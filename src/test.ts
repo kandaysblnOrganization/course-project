@@ -1,3 +1,3 @@
 export const someFn = () => {
-    console.log("RANDOM");
+	console.log("RANDOM");
 };
