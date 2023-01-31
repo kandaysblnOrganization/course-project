@@ -4,6 +4,7 @@ import { MainPageAsync } from "./pages/MainPage/MainPage.async";
 import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 import { Theme } from "./theme/ThemeContext";
 import { useTheme } from "./theme/useTheme";
+import { classNames } from "./helpers/classNames/classNames";
 import './styles/index.scss';
 
 export const App = () => {
@@ -11,7 +12,7 @@ export const App = () => {
 	const { theme, toggleTheme } = useTheme();
 
 	return (
-		<div className={ `wrapper ${ theme }` }>
+		<div className={ classNames( 'wrapper', {}, [ theme ] ) }>
 			<button
 				onClick={ toggleTheme }
 			>
