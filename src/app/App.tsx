@@ -1,11 +1,11 @@
 import React, { Suspense } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
-import { MainPageAsync } from "./pages/MainPage/MainPage.async";
-import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
-import { Theme } from "./theme/ThemeContext";
-import { useTheme } from "./theme/useTheme";
-import { classNames } from "./helpers/classNames/classNames";
 import './styles/index.scss';
+import { useTheme } from "app/providers/ThemeProvider";
+import { classNames } from "shared/lib/classNames/classNames";
+import { Theme } from "app/providers/ThemeProvider/lib/ThemeContext";
+import { MainPage } from "pages/MainPage";
+import { AboutPage } from "pages/AboutPage";
 
 export const App = () => {
 
@@ -22,8 +22,8 @@ export const App = () => {
 			<Link to='/about'>О сайте</Link>
 			<Suspense fallback={ <div>Loading...</div> }>
 				<Routes>
-					<Route path='/' element={ <MainPageAsync/> }/>
-					<Route path='/about' element={ <AboutPageAsync/> }/>
+					<Route path='/' element={ <MainPage/> }/>
+					<Route path='/about' element={ <AboutPage/> }/>
 				</Routes>
 			</Suspense>
 		</div>
