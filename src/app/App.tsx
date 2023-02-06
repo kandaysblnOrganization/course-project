@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
 import './styles/index.scss';
+import { Link, Route, Routes } from 'react-router-dom';
 import { useTheme } from "app/providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Theme } from "app/providers/ThemeProvider/lib/ThemeContext";
@@ -12,7 +12,7 @@ export const App = () => {
 	const { theme, toggleTheme } = useTheme();
 
 	return (
-		<div className={ classNames( 'wrapper', {}, [ theme ] ) }>
+		<div className={ classNames('wrapper', {}, [ theme ]) }>
 			<button
 				onClick={ toggleTheme }
 			>
