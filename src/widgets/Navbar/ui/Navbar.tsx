@@ -14,7 +14,6 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
 	} = props;
 	return (
 		<div className={ classNames(classes.navbar, {}, [ className ]) }>
-			<ThemeSwitcher/>
 			<nav className={ classNames(classes.navbarLinks) }>
 				<AppLink theme={ AppLinkTheme.INVERTED } to='/'>Главная</AppLink>
 				<AppLink theme={ AppLinkTheme.INVERTED } to='/about'>О сайте</AppLink>

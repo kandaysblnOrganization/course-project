@@ -12,3 +12,13 @@
 
   min-height: 100vh;
 }
+
+.content-page {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+}
