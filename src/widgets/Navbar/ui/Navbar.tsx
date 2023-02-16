@@ -1,7 +1,8 @@
 import React from 'react';
 import { classNames } from "shared/lib/classNames/classNames";
-import classes from './Navbar.module.scss';
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher/ThemeSwitcher";
+import classes from './Navbar.module.scss';
 
 interface INavbarProps {
 	className?: string;
@@ -13,8 +14,11 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
 	} = props;
 	return (
 		<div className={ classNames(classes.navbar, {}, [ className ]) }>
-			<AppLink theme={ AppLinkTheme.INVERTED } to='/'>Главная</AppLink>
-			<AppLink theme={ AppLinkTheme.INVERTED } to='/about'>О сайте</AppLink>
+			<ThemeSwitcher/>
+			<nav className={ classNames(classes.navbarLinks) }>
+				<AppLink theme={ AppLinkTheme.INVERTED } to='/'>Главная</AppLink>
+				<AppLink theme={ AppLinkTheme.INVERTED } to='/about'>О сайте</AppLink>
+			</nav>
 		</div>
 	);
 };
