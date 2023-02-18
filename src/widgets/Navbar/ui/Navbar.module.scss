@@ -1,20 +1,17 @@
 .navbar {
-  box-sizing: border-box;
-  width: 100%;
-  height: var(--navbar-height);
-
-  background: var(--inverted-bg-color);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-
-  padding: 10px 30px;
+    box-sizing: border-box;
+    width: 100%;
+    height: var(--navbar-height);
+    background: var(--inverted-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 30px;
 }
 
 .navbar-links {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
