@@ -1,5 +1,7 @@
 {
   "main_navbar": "Главная",
   "about_navbar": "О нас",
-  "language": "Русский"
+  "language": "Русский",
+  "loading": "Загрузка...",
+  "collapse": "Свернуть"
 }

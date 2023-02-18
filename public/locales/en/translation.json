@@ -1,5 +1,7 @@
 {
   "main_navbar": "Home",
   "about_navbar": "About us",
-  "language": "English"
+  "language": "English",
+  "loading": "Loading...",
+  "collapse": "Collapse"
 }

@@ -4,6 +4,7 @@ import classes from './Sidebar.module.scss';
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher/ThemeSwitcher";
 import { LangSwitcher } from "shared/ui/LangSwitcher/LangSwitcher";
 import { useTranslation } from "react-i18next";
+import { Button } from "shared/ui/Button/Button";
 
 interface ISidebarProps {
 	className?: string;
@@ -29,9 +30,9 @@ export const Sidebar: React.FC<ISidebarProps> = (props) => {
 				}, [ className ])
 			}
 		>
-			<button onClick={ onToggle }>
+			<Button onClick={ onToggle }>
 				{t('collapse')}
-			</button>
+			</Button>
 
 			<div className={ classNames(classes.switchers, {}, []) }>
 				<ThemeSwitcher/>
