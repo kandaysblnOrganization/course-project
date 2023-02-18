@@ -12,11 +12,13 @@ export const App = () => {
 
 	return (
 		<div className={ classNames('wrapper', {}, [ theme ]) }>
-			<Navbar/>
-			<div className="content-page">
-				<Sidebar/>
-				<AppRouter/>
-			</div>
+			<React.Suspense fallback="">
+				<Navbar/>
+				<div className="content-page">
+					<Sidebar/>
+					<AppRouter/>
+				</div>
+			</React.Suspense>
 		</div>
 	);
 };
