@@ -4,5 +4,7 @@
   "language": "language",
   "loading": "loading",
   "main_navbar": "main_navbar",
-  "main_page": "main_page"
+  "main_page": "main_page",
+  "not_found_page": "not_found_page",
+  "not_fount_page": "not_fount_page"
 }
