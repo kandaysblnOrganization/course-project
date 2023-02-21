@@ -3,5 +3,8 @@
   "about_navbar": "О нас",
   "language": "Русский",
   "loading": "Загрузка...",
-  "collapse": "Свернуть"
+  "collapse": "Свернуть",
+  "page_error_message": "Произошла непредвиденная ошибка",
+  "page_reload_text": "Обновить страницу",
+  "throw_error": "Вызвать ошибку"
 }

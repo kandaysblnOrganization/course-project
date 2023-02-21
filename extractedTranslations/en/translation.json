@@ -2,9 +2,10 @@
   "about_navbar": "about_navbar",
   "collapse": "collapse",
   "language": "language",
-  "loading": "loading",
   "main_navbar": "main_navbar",
   "main_page": "main_page",
   "not_found_page": "not_found_page",
-  "not_fount_page": "not_fount_page"
+  "page_error_message": "page_error_message",
+  "page_reload_text": "page_reload_text",
+  "throw_error": "throw_error"
 }
