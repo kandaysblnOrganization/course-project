@@ -1,6 +1,6 @@
 import webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { IBuildOptions } from './types/config';
+import { buildCssLoaders } from './loaders/buildCssLoaders';
 
 export const buildLoaders = ({ isDev }: IBuildOptions): webpack.RuleSetRule[] => {
 
@@ -46,25 +46,7 @@ export const buildLoaders = ({ isDev }: IBuildOptions): webpack.RuleSetRule[] =>
         exclude: /node_modules/,
     };
 
-    const cssLoader = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            {
-                loader: 'css-loader',
-                options: {
-                    modules: {
-                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-                        localIdentName: isDev
-                            ? '[path][name]__[local]--[hash:base64:8]'
-                            : '[hash:base64:8]',
-                        exportLocalsConvention: 'camelCase',
-                    },
-                },
-            },
-            'sass-loader',
-        ],
-    };
+    const cssLoader = buildCssLoaders(isDev);
 
     return [
         fileLoader,
