@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "./build/",
     "noImplicitAny": true,
     "module": "ESNext",
     "target": "es5",
@@ -22,6 +22,7 @@
     }
   },
   "include": [
-    "./config/jest/jest-setup.ts",
+    "./src",
+    "./config/jest/jest-setup.ts"
   ]
 }

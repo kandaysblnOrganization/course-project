@@ -38,6 +38,7 @@ export default {
     modulePaths: [ '<rootDir>/src' ],
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
+        '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx',
     },
 
     // Indicates whether the coverage information should be collected while executing the test
