@@ -19,10 +19,11 @@ module.exports = {
         'indent': [2, 4],
         'react/react-in-jsx-scope': 'off',
         'react/jsx-uses-react': 'off',
-        'i18next/no-literal-string': ['error', {
+        'i18next/no-literal-string': [ 'error', {
             'markupOnly': true,
-            'onlyAttribute': ['']
-        }]
+            'onlyAttribute': [ '' ]
+        } ],
+        'react/display-name': 'off',
     },
     'globals': {
         'module': false
