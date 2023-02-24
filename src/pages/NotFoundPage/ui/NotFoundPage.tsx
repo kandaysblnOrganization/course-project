@@ -9,7 +9,7 @@ interface INotFoundPageProps {
 
 export const NotFoundPage: React.FC<INotFoundPageProps> = (props) => {
     const { className } = props;
-    const { t } = useTranslation('not_found_page');
+    const { t, i18n } = useTranslation( 'not_found_page' );
     return (
         <div className={ classNames(classes.notFoundPage, {}, [ className ]) }>
             { t('not_found_page') }

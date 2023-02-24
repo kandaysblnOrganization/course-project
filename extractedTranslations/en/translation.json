@@ -3,8 +3,6 @@
   "collapse": "collapse",
   "language": "language",
   "main_navbar": "main_navbar",
-  "main_page": "main_page",
-  "not_found_page": "not_found_page",
   "page_error_message": "page_error_message",
   "page_reload_text": "page_reload_text",
   "throw_error": "throw_error"
