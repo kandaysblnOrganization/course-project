@@ -12,10 +12,6 @@
     transition: width 0.2s;
 }
 
-.collapsed {
-    width: var(--sidebar-width-collapsed);
-}
-
 .switchers {
     margin-top: auto;
     display: flex;
@@ -27,4 +23,25 @@
     position: absolute;
     bottom: 32px;
     right: -32px;
+}
+
+.sidebar-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
 }

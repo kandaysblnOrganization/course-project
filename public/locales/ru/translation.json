@@ -6,5 +6,6 @@
   "collapse": "Свернуть",
   "page_error_message": "Произошла непредвиденная ошибка",
   "page_reload_text": "Обновить страницу",
-  "throw_error": "Вызвать ошибку"
+  "throw_error": "Вызвать ошибку",
+  "language_short": "Рус"
 }

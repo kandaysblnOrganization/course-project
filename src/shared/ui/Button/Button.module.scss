@@ -3,6 +3,18 @@
     padding: 10px 20px;
 }
 
+.size-m {
+    font: var(--font-m);
+}
+
+.size-l {
+    font: var(--font-l);
+}
+
+.size-xl {
+    font: var(--font-xl);
+}
+
 .clear {
     background: none;
     border: none;
@@ -48,16 +60,4 @@
         width: var(--font-line-height-xl);
         height: var(--font-line-height-xl);
     }
-}
-
-.size-m {
-    font: var(--font-m);
-}
-
-.size-l {
-    font: var(--font-l);
-}
-
-.size-xl {
-    font: var(--font-xl);
 }

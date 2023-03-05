@@ -5,7 +5,7 @@ import classes from './AppLink.module.scss';
 
 export enum AppLinkTheme {
 	PRIMARY = 'primary',
-	INVERTED = 'inverted',
+	INVERTED_PRIMARY = 'invertedPrimary',
 }
 
 interface IAppLinkProps extends LinkProps {
@@ -17,7 +17,7 @@ export const AppLink: React.FC<IAppLinkProps> = (props) => {
     const {
         to,
         className,
-        theme = AppLinkTheme.PRIMARY,
+        theme,
         children,
         ...otherProps
     } = props;

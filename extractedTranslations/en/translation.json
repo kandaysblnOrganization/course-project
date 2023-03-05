@@ -2,6 +2,7 @@
   "about_navbar": "about_navbar",
   "collapse": "collapse",
   "language": "language",
+  "language_short": "language_short",
   "main_navbar": "main_navbar",
   "page_error_message": "page_error_message",
   "page_reload_text": "page_reload_text",
