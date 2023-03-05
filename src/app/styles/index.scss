@@ -1,7 +1,14 @@
-@import "reset";
-@import "./vars/global";
-@import "./themes/normal";
-@import "./themes/dark";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import 'reset';
+@import './vars/global';
+@import './themes/normal';
+@import './themes/dark';
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
 
 .wrapper {
     width: 100%;
