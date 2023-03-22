@@ -15,29 +15,46 @@
     font: var(--font-xl);
 }
 
-.clear {
+.clear,
+.clear-inverted {
     background: none;
     border: none;
     outline: none;
     padding: 0;
 }
 
+.clear-inverted {
+    color: var(--inverted-primary-color);
+}
+
+.outlined,
+.outlined-inverted {
+    background-color: transparent;
+}
+
 .outlined {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
-    background-color: transparent;
+}
+
+.outlined-inverted {
+    border: 1px solid var(--inverted-primary-color);
+    color: var(--inverted-primary-color);
+}
+
+.background,
+.background-inverted {
+    border: none;
 }
 
 .background {
     background-color: var(--bg-color);
     color: var(--primary-color);
-    border: none;
 }
 
 .background-inverted {
     background-color: var(--inverted-bg-color);
     color: var(--inverted-primary-color);
-    border: none;
 }
 
 .square {

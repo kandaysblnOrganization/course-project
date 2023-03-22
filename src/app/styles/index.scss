@@ -10,9 +10,14 @@
     box-sizing: border-box;
 }
 
-.wrapper {
+body {
     width: 100%;
     font: var(--font-m);
+    color: var(--primary-color);
+}
+
+.wrapper {
+    width: 100%;
     background: var(--bg-color);
     color: var(--primary-color);
     min-height: 100vh;

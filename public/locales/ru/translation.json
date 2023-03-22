@@ -7,5 +7,7 @@
   "page_error_message": "Произошла непредвиденная ошибка",
   "page_reload_text": "Обновить страницу",
   "throw_error": "Вызвать ошибку",
-  "language_short": "Рус"
+  "language_short": "Рус",
+  "open-modal": "Открыть окно",
+  "login": "Войти"
 }

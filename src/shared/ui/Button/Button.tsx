@@ -4,7 +4,9 @@ import classes from './Button.module.scss';
 
 export enum ButtonTheme {
     CLEAR = 'clear',
+    CLEAR_INVERTED = 'clear-inverted',
     OUTLINED = 'outlined',
+    OUTLINED_INVERTED = 'outlined-inverted',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted',
 }

@@ -9,7 +9,12 @@ module.exports = {
         'ecmaVersion': 'latest',
         'sourceType': 'module'
     },
-    'plugins': ['react', '@typescript-eslint', 'i18next'],
+    'plugins': [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks'
+    ],
     'rules': {
         'linebreak-style': [2, 'unix'],
         'quotes': [2, 'single'],
@@ -24,6 +29,8 @@ module.exports = {
             'onlyAttribute': [ '' ]
         } ],
         'react/display-name': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error'
     },
     'globals': {
         'module': false

@@ -1,8 +1,9 @@
 import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import classes from './Navbar.module.scss';
+import { Modal } from 'shared/ui/Modal/Modal';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 interface INavbarProps {
     className?: string;
@@ -14,10 +15,28 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
     } = props;
 
     const { t } = useTranslation();
+    const [ isAuthModal, setIsAuthModal ] = React.useState<boolean>(false);
+
+    const onToggle = React.useCallback(() => {
+        setIsAuthModal(prevState => !prevState);
+    }, [ isAuthModal ]);
 
     return (
         <div className={ classNames(classes.navbar, {}, [ className ]) }>
-
+            <Button theme={ ButtonTheme.CLEAR_INVERTED } onClick={ onToggle }>
+                { t('login') }
+            </Button>
+            <Modal
+                isOpen={ isAuthModal }
+                onClose={ onToggle }
+            >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut dolorem eius, fuga harum iure
+                minima molestias neque soluta temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Architecto asperiores at consectetur ea fuga hic laborum libero maiores modi, molestias nesciunt
+                pariatur quam qui recusandae reiciendis rerum voluptatibus! Assumenda blanditiis delectus, eligendi
+                et eum fuga maxime optio perspiciatis quas qui quidem quis rem sequi! Fugit odit quos sequi veniam
+                voluptatem?
+            </Modal>
         </div>
     );
 };
