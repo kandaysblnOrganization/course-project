@@ -9,5 +9,8 @@
   "throw_error": "Throw error",
   "language_short": "En",
   "open-modal": "Open modal",
-  "login": "Sign In"
+  "login": "Sign In",
+  "counter-title": "Counter",
+  "counter-increment": "Increment",
+  "counter-decrement": "Decrement"
 }

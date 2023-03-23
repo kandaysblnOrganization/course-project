@@ -1,6 +1,10 @@
 {
   "about_navbar": "about_navbar",
+  "about_page": "about_page",
   "collapse": "collapse",
+  "counter-decrement": "counter-decrement",
+  "counter-increment": "counter-increment",
+  "counter-title": "counter-title",
   "language": "language",
   "language_short": "language_short",
   "login": "login",

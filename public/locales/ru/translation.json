@@ -9,5 +9,8 @@
   "throw_error": "Вызвать ошибку",
   "language_short": "Рус",
   "open-modal": "Открыть окно",
-  "login": "Войти"
+  "login": "Войти",
+  "counter-title": "Счетчик",
+  "counter-increment": "Прибавить",
+  "counter-decrement": "Убавить"
 }
