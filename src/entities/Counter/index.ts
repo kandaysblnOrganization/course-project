@@ -7,4 +7,3 @@ export {
 export {
     counterReducer
 } from './model/slice/counterSlice';
-export {} from './model/selectors';

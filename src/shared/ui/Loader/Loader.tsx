@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Loader.module.scss';
 
 interface ILoaderProps {
-	className?: string;
+    className?: string;
 }
 
 export const Loader: React.FC<ILoaderProps> = (props) => {

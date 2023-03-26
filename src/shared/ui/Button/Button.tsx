@@ -18,8 +18,8 @@ export enum ButtonSize {
 }
 
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	className?: string;
-	theme?: ButtonTheme;
+    className?: string;
+    theme?: ButtonTheme;
     size?: ButtonSize;
     square?: boolean;
 }
@@ -40,7 +40,7 @@ export const Button: React.FC<IButtonProps> = (props) => {
 
     return (
         <button
-            className={ classNames( classes.button, mods, [ classes[size], classes[theme], className ] ) }
+            className={ classNames(classes.button, mods, [ classes[size], classes[theme], className ]) }
             { ...otherProps }
         >
             { children }

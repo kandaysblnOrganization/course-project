@@ -30,8 +30,8 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
                 isOpen={ isAuthModal }
                 onClose={ onToggle }
             >
-                {/* eslint-disable-next-line i18next/no-literal-string */}
-                {/* eslint-disable-next-line i18next/no-literal-string */}
+                {/* eslint-disable-next-line i18next/no-literal-string */ }
+                {/* eslint-disable-next-line i18next/no-literal-string */ }
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut dolorem eius, fuga harum iure
                 minima molestias neque soluta temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Architecto asperiores at consectetur ea fuga hic laborum libero maiores modi, molestias nesciunt

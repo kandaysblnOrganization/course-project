@@ -31,7 +31,7 @@ export const Modal: React.FC<IModalProps> = (props) => {
                 setIsClosing(false);
             }, ANIMATION_DELAY);
         }
-    }, [onClose]);
+    }, [ onClose ]);
 
     const onKeyDown = React.useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
@@ -57,7 +57,7 @@ export const Modal: React.FC<IModalProps> = (props) => {
         return () => {
             clearTimeout(timeoutRef.current);
         };
-    }, [isOpen, onKeyDown]);
+    }, [ isOpen, onKeyDown ]);
 
     return (
         <Portal>

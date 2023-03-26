@@ -13,8 +13,8 @@
     "paths": {
       "*": [
         "./src/*"
-      ],
-    },
+      ]
+    }
   },
   "ts-node": {
     "compilerOptions": {

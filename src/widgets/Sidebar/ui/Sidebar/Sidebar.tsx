@@ -14,26 +14,26 @@ interface ISidebarProps {
     className?: string;
 }
 
-export const Sidebar: React.FC<ISidebarProps> = ( props ) => {
+export const Sidebar: React.FC<ISidebarProps> = (props) => {
     const {
         className,
         ...otherProps
     } = props;
 
     const { t } = useTranslation();
-    const [ collapsed, setCollapsed ] = React.useState<boolean>( false );
+    const [ collapsed, setCollapsed ] = React.useState<boolean>(false);
 
     const onToggle = () => {
-        setCollapsed( prev => !prev );
+        setCollapsed(prev => !prev);
     };
 
     return (
         <div
             data-testid="sidebar-testId"
             className={
-                classNames( classes.sidebar, {
+                classNames(classes.sidebar, {
                     [classes.collapsed]: collapsed,
-                }, [ className ] )
+                }, [ className ])
             }
 
             { ...otherProps }
@@ -49,7 +49,7 @@ export const Sidebar: React.FC<ISidebarProps> = ( props ) => {
                 { collapsed ? '>' : '<' }
             </Button>
 
-            <nav className={ classNames( classes.sidebarNavLinks ) }>
+            <nav className={ classNames(classes.sidebarNavLinks) }>
                 <AppLink
                     className={ classes.sidebarNavLink }
                     theme={ AppLinkTheme.INVERTED_PRIMARY }
@@ -58,7 +58,7 @@ export const Sidebar: React.FC<ISidebarProps> = ( props ) => {
                     <MainIcon className={ classes.icon }/>
                     { !collapsed && (
                         <span>
-                            { t( 'main_navbar' ) }
+                            { t('main_navbar') }
                         </span>
                     ) }
                 </AppLink>
@@ -70,13 +70,13 @@ export const Sidebar: React.FC<ISidebarProps> = ( props ) => {
                     <AboutIcon className={ classes.icon }/>
                     { !collapsed && (
                         <span>
-                            { t( 'about_navbar' ) }
+                            { t('about_navbar') }
                         </span>
                     ) }
                 </AppLink>
             </nav>
 
-            <div className={ classNames( classes.switchers, {}, [] ) }>
+            <div className={ classNames(classes.switchers, {}, []) }>
                 <ThemeSwitcher/>
                 <LangSwitcher short={ collapsed }/>
             </div>

@@ -13,7 +13,7 @@ export default {
     },
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => <Button { ...args } />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -24,7 +24,7 @@ export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     children: 'Text',
 };
-PrimaryDark.decorators = [ ThemeDecorator( Theme.DARK ) ];
+PrimaryDark.decorators = [ ThemeDecorator(Theme.DARK) ];
 
 export const Clear = Template.bind({});
 Clear.args = {
@@ -37,7 +37,7 @@ ClearDark.args = {
     children: 'Text',
     theme: ButtonTheme.CLEAR,
 };
-ClearDark.decorators = [ ThemeDecorator( Theme.DARK ) ];
+ClearDark.decorators = [ ThemeDecorator(Theme.DARK) ];
 
 export const ClearInverted = Template.bind({});
 ClearInverted.args = {
@@ -86,7 +86,7 @@ OutlinedDark.args = {
     theme: ButtonTheme.OUTLINED,
 };
 
-OutlinedDark.decorators = [ ThemeDecorator( Theme.DARK ) ];
+OutlinedDark.decorators = [ ThemeDecorator(Theme.DARK) ];
 
 export const OutlinedInverted = Template.bind({});
 OutlinedInverted.args = {
@@ -100,7 +100,7 @@ OutlinedInvertedDark.args = {
     theme: ButtonTheme.OUTLINED_INVERTED,
 };
 
-OutlinedInvertedDark.decorators = [ ThemeDecorator( Theme.DARK ) ];
+OutlinedInvertedDark.decorators = [ ThemeDecorator(Theme.DARK) ];
 
 export const Background = Template.bind({});
 Background.args = {
@@ -120,7 +120,7 @@ BackgroundInvertedDark.args = {
     theme: ButtonTheme.BACKGROUND_INVERTED,
 };
 
-BackgroundInvertedDark.decorators = [ ThemeDecorator( Theme.DARK ) ];
+BackgroundInvertedDark.decorators = [ ThemeDecorator(Theme.DARK) ];
 
 export const Square = Template.bind({});
 Square.args = {

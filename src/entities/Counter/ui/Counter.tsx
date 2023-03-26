@@ -19,16 +19,18 @@ export const Counter: React.FC = () => {
     };
 
     return (
-        <div>
-            <h2>
+        <div data-testid="counter-test-id">
+            <h2 data-testid="value-title-test-id">
                 { t('counter-title') } = { counterValue }
             </h2>
             <Button
+                data-testid="increment-btn-test-id"
                 onClick={ increment }
             >
                 { t('counter-increment') }
             </Button>
             <Button
+                data-testid="decrement-btn-test-id"
                 onClick={ decrement }
             >
                 { t('counter-decrement') }

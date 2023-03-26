@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import classes from './LangSwitcher.module.scss';
 
 interface ILangSwitcherProps {
-	className?: string;
+    className?: string;
     short?: boolean;
 }
 

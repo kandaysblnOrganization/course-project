@@ -20,10 +20,10 @@ export const PageError: React.FC<IPageErrorProps> = (props) => {
     };
 
     return (
-        <div className={ classNames( classes.pageError, {}, [ className ] ) }>
-            <p>{ t( 'page_error_message' ) }</p>
+        <div className={ classNames(classes.pageError, {}, [ className ]) }>
+            <p>{ t('page_error_message') }</p>
             <Button theme={ ButtonTheme.OUTLINED } onClick={ reloadPage }>
-                { t( 'page_reload_text' ) }
+                { t('page_reload_text') }
             </Button>
         </div>
     );

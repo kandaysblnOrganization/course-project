@@ -4,12 +4,12 @@ import { componentRender } from 'shared/lib/tests/componentRender/componentRende
 
 describe('Sidebar tests', () => {
     test('sidebar to be in the document', () => {
-        componentRender( <Sidebar/> );
+        componentRender(<Sidebar/>);
         expect(screen.getByTestId('sidebar-testId')).toBeInTheDocument();
     });
 
     test('sidebar toggle test', () => {
-        componentRender( <Sidebar/> );
+        componentRender(<Sidebar/>);
         const sidebarToggleBtn = screen.getByTestId('sidebar-toggle-btn-testId');
         fireEvent.click(sidebarToggleBtn);
         expect(screen.getByTestId('sidebar-testId')).toHaveClass('collapsed');
