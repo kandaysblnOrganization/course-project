@@ -9,7 +9,7 @@ export const App = () => {
     const { theme } = useTheme();
 
     return (
-        <div className={ classNames('wrapper', {}, [ theme ]) }>
+        <div className={ classNames('wrapper', {}, []) }>
             <React.Suspense fallback="">
                 <Navbar/>
                 <div className="content-page">

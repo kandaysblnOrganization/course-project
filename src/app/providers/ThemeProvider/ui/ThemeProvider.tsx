@@ -20,6 +20,13 @@ const ThemeProvider: React.FC<IThemeProviderProps> = (props) => {
         setTheme: setTheme,
     }), [ theme ]);
 
+    React.useEffect(() => {
+        if (![ document.body.className ].includes(Theme.LIGHT)
+            || ![ document.body.className ].includes(Theme.DARK)) {
+            document.body.className = Theme.LIGHT;
+        }
+    }, []);
+
     return (
         <ThemeContext.Provider value={ providerValue }>
             { children }
