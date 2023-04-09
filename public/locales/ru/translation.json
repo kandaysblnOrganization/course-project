@@ -12,5 +12,7 @@
   "login": "Войти",
   "counter-title": "Счетчик",
   "counter-increment": "Прибавить",
-  "counter-decrement": "Убавить"
+  "counter-decrement": "Убавить",
+  "username": "Логин",
+  "userpass": "Пароль"
 }

@@ -12,5 +12,7 @@
   "login": "Sign In",
   "counter-title": "Counter",
   "counter-increment": "Increment",
-  "counter-decrement": "Decrement"
+  "counter-decrement": "Decrement",
+  "username": "Login",
+  "userpass": "Password"
 }

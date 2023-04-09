@@ -12,5 +12,7 @@
   "open-modal": "open-modal",
   "page_error_message": "page_error_message",
   "page_reload_text": "page_reload_text",
-  "throw_error": "throw_error"
+  "throw_error": "throw_error",
+  "username": "username",
+  "userpass": "userpass"
 }

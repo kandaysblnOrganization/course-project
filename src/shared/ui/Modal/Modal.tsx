@@ -8,6 +8,7 @@ const ANIMATION_DELAY = 200;
 interface IModalProps {
     className?: string;
     children?: React.ReactNode;
+    lazy?: boolean;
     isOpen?: boolean;
     onClose?: () => void
 }
@@ -17,10 +18,12 @@ export const Modal: React.FC<IModalProps> = (props) => {
         className,
         children,
         isOpen,
+        lazy,
         onClose,
     } = props;
 
     const [ isClosing, setIsClosing ] = React.useState(false);
+    const [ isMounted, setIsMounted ] = React.useState(false);
     const timeoutRef = React.useRef<ReturnType<typeof setTimeout>>();
 
     const closeHandler = React.useCallback(() => {
@@ -49,6 +52,12 @@ export const Modal: React.FC<IModalProps> = (props) => {
     };
 
     React.useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [ isOpen ]);
+
+    React.useEffect(() => {
 
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
@@ -58,6 +67,10 @@ export const Modal: React.FC<IModalProps> = (props) => {
             clearTimeout(timeoutRef.current);
         };
     }, [ isOpen, onKeyDown ]);
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>
