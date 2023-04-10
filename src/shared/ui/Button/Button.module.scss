@@ -1,6 +1,14 @@
 .button {
     cursor: pointer;
     padding: 10px 20px;
+    transition: all 0.2s linear;
+
+    &:disabled {
+        filter: grayscale(1);
+        opacity: 0.5;
+        cursor: default;
+        pointer-events: none;
+    }
 }
 
 .size-m {

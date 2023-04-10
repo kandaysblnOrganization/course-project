@@ -21,7 +21,9 @@ export const LoginForm = React.memo((props: ILoginFormProps) => {
     const dispatch = useDispatch();
     const {
         username,
-        password
+        password,
+        isLoading,
+        error
     } = useSelector(getLoginState);
 
     const onChangeUsername = React.useCallback((value: string) => {
@@ -38,6 +40,9 @@ export const LoginForm = React.memo((props: ILoginFormProps) => {
 
     return (
         <div className={ classNames(classes.loginForm, {}, [ className ]) }>
+            {
+                error && <div>{ error }</div>
+            }
             <Input
                 autofocus
                 value={ username }
@@ -53,6 +58,7 @@ export const LoginForm = React.memo((props: ILoginFormProps) => {
             />
             <Button
                 theme={ ButtonTheme.BACKGROUND_INVERTED }
+                disabled={ isLoading }
                 onClick={ onClickLogin }
             >
                 { t('login') }
