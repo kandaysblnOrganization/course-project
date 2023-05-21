@@ -23,9 +23,9 @@ const ThemeProvider: React.FC<IThemeProviderProps> = (props) => {
     React.useEffect(() => {
         if (![ document.body.className ].includes(Theme.LIGHT)
             || ![ document.body.className ].includes(Theme.DARK)) {
-            document.body.className = Theme.LIGHT;
+            document.body.className = initialTheme || defaultTheme;
         }
-    }, []);
+    }, [ initialTheme ]);
 
     return (
         <ThemeContext.Provider value={ providerValue }>

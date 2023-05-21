@@ -3,8 +3,12 @@ import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
     <ThemeProvider initialTheme={ theme }>
-        <div className={ `wrapper ${ theme }` }>
-            <StoryComponent/>
-        </div>
+        <body className={ theme }>
+            <div id="root">
+                <div className="wrapper">
+                    <StoryComponent/>
+                </div>
+            </div>
+        </body>
     </ThemeProvider>
 );

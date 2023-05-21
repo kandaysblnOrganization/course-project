@@ -14,5 +14,9 @@
   "counter-increment": "Increment",
   "counter-decrement": "Decrement",
   "username": "Login",
-  "userpass": "Password"
+  "userpass": "Password",
+  "login_form_title": "Authorization",
+  "authorization_error_title": "Authorization error",
+  "authorization_error_text": "Wrong login or password",
+  "logout": "Logout"
 }

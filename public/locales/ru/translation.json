@@ -14,5 +14,9 @@
   "counter-increment": "Прибавить",
   "counter-decrement": "Убавить",
   "username": "Логин",
-  "userpass": "Пароль"
+  "userpass": "Пароль",
+  "login_form_title": "Авторизация",
+  "authorization_error_title": "Ошибка при авторизации",
+  "authorization_error_text": "Неверный логин или пароль",
+  "logout": "Выйти"
 }

@@ -1,6 +1,8 @@
 {
   "about_navbar": "about_navbar",
   "about_page": "about_page",
+  "authorization_error_text": "authorization_error_text",
+  "authorization_error_title": "authorization_error_title",
   "collapse": "collapse",
   "counter-decrement": "counter-decrement",
   "counter-increment": "counter-increment",
@@ -8,6 +10,8 @@
   "language": "language",
   "language_short": "language_short",
   "login": "login",
+  "login_form_title": "login_form_title",
+  "logout": "logout",
   "main_navbar": "main_navbar",
   "open-modal": "open-modal",
   "page_error_message": "page_error_message",

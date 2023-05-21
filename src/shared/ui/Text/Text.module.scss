@@ -10,3 +10,10 @@
     font: var(--font-m);
     color: var(--secondary-color);
 }
+
+.error {
+    .title,
+    .text {
+        color: var(--red-light);
+    }
+}
