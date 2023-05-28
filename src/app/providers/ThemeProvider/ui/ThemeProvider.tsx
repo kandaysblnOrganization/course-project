@@ -15,10 +15,10 @@ const ThemeProvider: React.FC<IThemeProviderProps> = (props) => {
     } = props;
     const [ theme, setTheme ] = React.useState<Theme>(initialTheme || defaultTheme);
 
-    const providerValue: ThemeContextProps = React.useMemo(() => ({
+    const providerValue: ThemeContextProps = React.useMemo(() => ( {
         theme: theme,
         setTheme: setTheme,
-    }), [ theme ]);
+    } ), [ theme ]);
 
     React.useEffect(() => {
         if (![ document.body.className ].includes(Theme.LIGHT)

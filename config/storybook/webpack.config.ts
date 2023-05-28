@@ -4,7 +4,7 @@ import path from 'path';
 import { buildCssLoader } from '../webpack/build/loaders/buildCssLoader';
 import { buildSvgLoader } from '../webpack/build/loaders/buildSvgLoader';
 
-export default (({ config }: { config: webpack.Configuration; }) => {
+export default ( ({ config }: { config: webpack.Configuration; }) => {
     const paths: IBuildPaths = {
         build: '',
         entry: '',
@@ -33,4 +33,4 @@ export default (({ config }: { config: webpack.Configuration; }) => {
     );
 
     return config;
-});
+} );
