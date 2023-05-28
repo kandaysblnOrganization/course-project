@@ -10,11 +10,11 @@ import { getLoginState } from '../../model/selectors/getLoginState/getLoginState
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { Text } from 'shared/ui/Text/Text';
 
-interface ILoginFormProps {
+export interface ILoginFormProps {
     className?: string;
 }
 
-export const LoginForm = React.memo((props: ILoginFormProps) => {
+const LoginForm = React.memo((props: ILoginFormProps) => {
     const {
         className,
     } = props;
@@ -74,3 +74,5 @@ export const LoginForm = React.memo((props: ILoginFormProps) => {
         </div>
     );
 });
+
+export default LoginForm;
