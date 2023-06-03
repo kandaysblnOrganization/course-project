@@ -5,10 +5,14 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginActions } from '../../model/slice/loginSlice';
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { Text } from 'shared/ui/Text/Text';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 export interface ILoginFormProps {
     className?: string;
@@ -20,12 +24,16 @@ const LoginForm = React.memo((props: ILoginFormProps) => {
     } = props;
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const {
-        username,
-        password,
-        isLoading,
-        error
-    } = useSelector(getLoginState);
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const error = useSelector(getLoginError);
+    const isLoading = useSelector(getLoginIsLoading);
+
+    const initialReducers = React.useMemo<ReducersList>(() => {
+        return {
+            loginForm: loginReducer,
+        };
+    }, []);
 
     const onChangeUsername = React.useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -40,38 +48,43 @@ const LoginForm = React.memo((props: ILoginFormProps) => {
     }, [ dispatch, password, username ]);
 
     return (
-        <div className={ classNames(classes.loginForm, {}, [ className ]) }>
-            <Text
-                title={ t('login_form_title') }
-            />
-            {
-                error && <Text
-                    title={ t('authorization_error_title') }
-                    text={ t('authorization_error_text') }
-                    theme='error'
+        <DynamicModuleLoader
+            reducers={ initialReducers }
+            removeAfterUnmount={ true }
+        >
+            <div className={ classNames(classes.loginForm, {}, [ className ]) }>
+                <Text
+                    title={ t('login_form_title') }
                 />
-            }
-            <Input
-                autofocus
-                value={ username }
-                label={ t('username') }
-                type="text"
-                onChange={ onChangeUsername }
-            />
-            <Input
-                value={ password }
-                label={ t('userpass') }
-                type="password"
-                onChange={ onChangePassword }
-            />
-            <Button
-                theme={ ButtonTheme.BACKGROUND_INVERTED }
-                disabled={ isLoading }
-                onClick={ onClickLogin }
-            >
-                { t('login') }
-            </Button>
-        </div>
+                {
+                    error && <Text
+                        title={ t('authorization_error_title') }
+                        text={ t('authorization_error_text') }
+                        theme='error'
+                    />
+                }
+                <Input
+                    autofocus
+                    value={ username }
+                    label={ t('username') }
+                    type="text"
+                    onChange={ onChangeUsername }
+                />
+                <Input
+                    value={ password }
+                    label={ t('userpass') }
+                    type="password"
+                    onChange={ onChangePassword }
+                />
+                <Button
+                    theme={ ButtonTheme.BACKGROUND_INVERTED }
+                    disabled={ isLoading }
+                    onClick={ onClickLogin }
+                >
+                    { t('login') }
+                </Button>
+            </div>
+        </DynamicModuleLoader>
     );
 });
 

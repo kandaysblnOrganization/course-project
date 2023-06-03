@@ -20,6 +20,6 @@ export interface IReducerManager {
     remove: (key: StateSchemaKey) => void
 }
 
-export interface IStoreWithManager extends EnhancedStore<IStateSchema> {
-    reducerManage: string;
+export interface IReduxStoreWithManager extends EnhancedStore<IStateSchema> {
+    reducerManager: IReducerManager;
 }
