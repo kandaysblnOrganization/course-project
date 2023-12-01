@@ -1,21 +1,21 @@
 import { DeepPartial } from '@reduxjs/toolkit';
 import { IStateSchema } from 'shared/config/storeConfig/StateSchema';
-import { getLoginIsLoading } from './getLoginIsLoading';
+import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
 
-describe( 'getLoginIsLoading.test', () => {
+describe( 'getLoginUserName all tests', () => {
     test( 'should work fine', () => {
         const state: DeepPartial<IStateSchema> = {
             loginForm: {
-                isLoading: true,
+                username: 'username',
             },
         };
 
-        expect( getLoginIsLoading( state as IStateSchema ) ).toEqual( state.loginForm.isLoading );
+        expect( getLoginUsername( state as IStateSchema ) ).toEqual( state.loginForm.username );
     } );
 
     test( 'should work fine without state', () => {
         const state: DeepPartial<IStateSchema> = {};
 
-        expect( getLoginIsLoading( state as IStateSchema ) ).toEqual( false );
+        expect( getLoginUsername( state as IStateSchema ) ).toEqual( '' );
     } );
 } );

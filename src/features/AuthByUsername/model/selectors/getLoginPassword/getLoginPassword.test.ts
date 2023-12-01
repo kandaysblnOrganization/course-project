@@ -1,21 +1,21 @@
 import { DeepPartial } from '@reduxjs/toolkit';
 import { IStateSchema } from 'shared/config/storeConfig/StateSchema';
-import { getLoginIsLoading } from './getLoginIsLoading';
+import { getLoginPassword } from './getLoginPassword';
 
-describe( 'getLoginIsLoading.test', () => {
+describe( 'getLoginPassword all tests', () => {
     test( 'should work fine', () => {
         const state: DeepPartial<IStateSchema> = {
             loginForm: {
-                isLoading: true,
+                password: '123456',
             },
         };
 
-        expect( getLoginIsLoading( state as IStateSchema ) ).toEqual( state.loginForm.isLoading );
+        expect( getLoginPassword( state as IStateSchema ) ).toEqual( state.loginForm.password );
     } );
 
     test( 'should work fine without state', () => {
         const state: DeepPartial<IStateSchema> = {};
 
-        expect( getLoginIsLoading( state as IStateSchema ) ).toEqual( false );
+        expect( getLoginPassword( state as IStateSchema ) ).toEqual( '' );
     } );
 } );
