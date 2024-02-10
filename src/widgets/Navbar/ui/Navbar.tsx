@@ -4,8 +4,9 @@ import { useTranslation } from 'react-i18next';
 import classes from './Navbar.module.scss';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface INavbarProps {
     className?: string;
@@ -19,7 +20,7 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
     const { t } = useTranslation();
     const [ isAuthModal, setIsAuthModal ] = React.useState<boolean>(false);
     const authData = useSelector(getUserAuthData);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const onCloseModal = React.useCallback(() => {
         setIsAuthModal(false);

@@ -1,12 +1,8 @@
-import { configureStore, ReducersMapObject, Store } from '@reduxjs/toolkit';
-import { IReducerManager, IStateSchema } from './StateSchema';
+import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import { IStateSchema } from './StateSchema';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
-
-interface IReduxStore extends Store<IStateSchema> {
-    reducerManager?: IReducerManager;
-}
 
 export const createReduxStore = (initialState?: IStateSchema, asyncReducers?: ReducersMapObject<IStateSchema>) => {
     const rootReducers: ReducersMapObject<IStateSchema> = {
@@ -17,13 +13,16 @@ export const createReduxStore = (initialState?: IStateSchema, asyncReducers?: Re
 
     const reducerManager = createReducerManager(rootReducers);
 
-    const store: IReduxStore = configureStore<IStateSchema>({
+    const store = configureStore<IStateSchema>({
         reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
         preloadedState: initialState,
     });
 
+    // @ts-expect-error: TODO поправить типы стора
     store.reducerManager = reducerManager;
 
     return store;
 };
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
