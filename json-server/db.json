@@ -36,6 +36,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "firstname": "Берадор",
+    "lastname": "Стамбеков",
+    "age": 21,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Екатеринбург",
+    "username": "kandaysbln",
+    "avatar": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairNotTooLong&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=PastelBlue&eyeType=Surprised&eyebrowType=Default&mouthType=Smile&skinColor=Light"
   }
 }

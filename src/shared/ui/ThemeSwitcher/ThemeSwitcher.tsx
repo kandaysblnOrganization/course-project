@@ -10,7 +10,7 @@ interface IThemeSwitcherProps {
     className?: string;
 }
 
-export const ThemeSwitcher: React.FC<IThemeSwitcherProps> = (props) => {
+const ThemeSwitcherComponent: React.FC<IThemeSwitcherProps> = (props) => {
     const {
         className,
     } = props;
@@ -29,3 +29,5 @@ export const ThemeSwitcher: React.FC<IThemeSwitcherProps> = (props) => {
         </Button>
     );
 };
+
+export const ThemeSwitcher = React.memo( ThemeSwitcherComponent );

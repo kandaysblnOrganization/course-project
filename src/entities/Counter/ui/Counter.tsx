@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { getCounterValue } from 'entities/Counter/model/selectors/getCounterValue/getCounterValue';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
-export const Counter: React.FC = () => {
+const CounterComponent: React.FC = () => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const counterValue = useSelector(getCounterValue);
@@ -39,3 +39,5 @@ export const Counter: React.FC = () => {
         </div>
     );
 };
+
+export const Counter = React.memo( CounterComponent );

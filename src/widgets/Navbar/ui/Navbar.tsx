@@ -12,7 +12,7 @@ interface INavbarProps {
     className?: string;
 }
 
-export const Navbar: React.FC<INavbarProps> = (props) => {
+const NavbarComponent: React.FC<INavbarProps> = (props) => {
     const {
         className,
     } = props;
@@ -56,3 +56,5 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
         </div>
     );
 };
+
+export const Navbar = React.memo( NavbarComponent );

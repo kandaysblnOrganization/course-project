@@ -7,7 +7,7 @@ interface INotFoundPageProps {
     className?: string;
 }
 
-export const NotFoundPage: React.FC<INotFoundPageProps> = (props) => {
+export const NotFoundPage = React.memo((props: INotFoundPageProps) => {
     const { className } = props;
     const { t, i18n } = useTranslation('not_found_page');
     return (
@@ -15,4 +15,4 @@ export const NotFoundPage: React.FC<INotFoundPageProps> = (props) => {
             { t('not_found_page') }
         </div>
     );
-};
+});

@@ -7,7 +7,7 @@ import { Sidebar } from 'widgets/Sidebar';
 import { userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
-export const App = () => {
+const AppComponent = () => {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
 
@@ -27,3 +27,5 @@ export const App = () => {
         </div>
     );
 };
+
+export const App = React.memo( AppComponent );

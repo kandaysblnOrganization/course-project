@@ -11,7 +11,7 @@ interface ITextProps {
     theme?: TextTheme;
 }
 
-export const Text: React.FC<ITextProps> = (props) => {
+const TextComponent: React.FC<ITextProps> = (props) => {
     const {
         className,
         text,
@@ -26,3 +26,5 @@ export const Text: React.FC<ITextProps> = (props) => {
         </div>
     );
 };
+
+export const Text = React.memo( TextComponent );

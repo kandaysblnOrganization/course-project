@@ -6,7 +6,7 @@ interface ILoaderProps {
     className?: string;
 }
 
-export const Loader: React.FC<ILoaderProps> = (props) => {
+const LoaderComponent: React.FC<ILoaderProps> = (props) => {
     const {
         className,
     } = props;
@@ -19,3 +19,5 @@ export const Loader: React.FC<ILoaderProps> = (props) => {
         </div>
     );
 };
+
+export const Loader = React.memo( LoaderComponent );

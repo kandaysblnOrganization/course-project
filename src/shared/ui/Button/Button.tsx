@@ -24,7 +24,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
 }
 
-export const Button: React.FC<IButtonProps> = (props) => {
+const ButtonComponent: React.FC<IButtonProps> = (props) => {
     const {
         className,
         children,
@@ -47,3 +47,5 @@ export const Button: React.FC<IButtonProps> = (props) => {
         </button>
     );
 };
+
+export const Button = ButtonComponent;

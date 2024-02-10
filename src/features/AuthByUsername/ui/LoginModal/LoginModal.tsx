@@ -12,7 +12,7 @@ interface ILoginModalProps {
     className?: string;
 }
 
-export const LoginModal: React.FC<ILoginModalProps> = (props) => {
+const LoginModalComponent: React.FC<ILoginModalProps> = (props) => {
     const {
         isOpen,
         onClose,
@@ -33,3 +33,5 @@ export const LoginModal: React.FC<ILoginModalProps> = (props) => {
         </Modal>
     );
 };
+
+export const LoginModal = React.memo( LoginModalComponent );

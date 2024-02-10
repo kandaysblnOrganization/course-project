@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Counter } from 'entities/Counter';
 
-const MainPage = () => {
+const MainPage = React.memo(() => {
 
     const { t, i18n } = useTranslation('main_page');
 
@@ -13,6 +13,6 @@ const MainPage = () => {
             <Counter/>
         </div>
     );
-};
+});
 
 export default MainPage;

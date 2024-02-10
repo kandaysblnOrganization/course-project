@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 import { PageLoader } from 'widgets/PageLoader';
 
-const AppRouter = () => {
+const AppRouterComponent = () => {
     return (
         <React.Suspense fallback={ <PageLoader/> }>
             <Routes>
@@ -14,5 +14,7 @@ const AppRouter = () => {
         </React.Suspense>
     );
 };
+
+const AppRouter = React.memo( AppRouterComponent );
 
 export default AppRouter;

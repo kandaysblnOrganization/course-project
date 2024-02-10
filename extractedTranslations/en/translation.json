@@ -1,4 +1,5 @@
 {
+  "": "",
   "about_navbar": "about_navbar",
   "about_page": "about_page",
   "authorization_error_text": "authorization_error_text",
@@ -16,6 +17,7 @@
   "open-modal": "open-modal",
   "page_error_message": "page_error_message",
   "page_reload_text": "page_reload_text",
+  "profile_navbar": "profile_navbar",
   "throw_error": "throw_error",
   "username": "username",
   "userpass": "userpass"

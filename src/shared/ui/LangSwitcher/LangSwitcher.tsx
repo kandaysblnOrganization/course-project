@@ -9,7 +9,7 @@ interface ILangSwitcherProps {
     short?: boolean;
 }
 
-export const LangSwitcher: React.FC<ILangSwitcherProps> = (props) => {
+const LangSwitcherComponent: React.FC<ILangSwitcherProps> = (props) => {
     const {
         className,
         short,
@@ -31,3 +31,5 @@ export const LangSwitcher: React.FC<ILangSwitcherProps> = (props) => {
         </Button>
     );
 };
+
+export const LangSwitcher = React.memo( LangSwitcherComponent );
