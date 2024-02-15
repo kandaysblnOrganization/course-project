@@ -33,7 +33,9 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error'
     },
     'globals': {
-        'module': false
+        'module': false,
+        __API__: true,
+        __IS_DEV__: true,
     },
     'overrides': [ {
         files: [ '**/src/**/*.test.{ts,tsx}' ],

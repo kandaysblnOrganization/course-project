@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useStore } from 'react-redux';
+import { useStore } from 'react-redux';
 import { IReduxStoreWithManager, StateSchemaKey } from 'shared/config/storeConfig/StateSchema';
 import { Reducer } from '@reduxjs/toolkit';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -7,8 +7,6 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 export type ReducersList = {
     [name in StateSchemaKey]?: Reducer
 };
-
-type ReducersListEntry = [ StateSchemaKey, Reducer ];
 
 interface IDynamicModuleLoaderProps {
     reducers: ReducersList;
@@ -24,23 +22,21 @@ export const DynamicModuleLoader: React.FC<IDynamicModuleLoaderProps> = (props) 
     const dispatch = useAppDispatch();
     const store = useStore() as IReduxStoreWithManager;
 
-    React.useEffect(() => {
-        Object.entries(reducers).forEach(([ name, reducer ]: ReducersListEntry) => {
-            store.reducerManager.add(name, reducer);
-            dispatch({ type: `@INIT ${ name } store` });
-        });
+    React.useEffect( () => {
+        Object.entries( reducers ).forEach( ([ name, reducer ]) => {
+            store.reducerManager.add( name as StateSchemaKey, reducer );
+            dispatch( { type: `@INIT ${ name } store` } );
+        } );
 
         return () => {
             if (removeAfterUnmount) {
-                Object.entries(reducers).forEach(([ name, reducer ]: ReducersListEntry) => {
-                    store.reducerManager.remove(name);
-                    dispatch({ type: `@DESTROY ${ name } store` });
-                });
+                Object.entries( reducers ).forEach( ([ name, _reducer ]) => {
+                    store.reducerManager.remove( name as StateSchemaKey );
+                    dispatch( { type: `@DESTROY ${ name } store` } );
+                } );
             }
         };
-
-        //eslint-disable-next-line
-    }, []);
+    }, [ removeAfterUnmount, store.reducerManager, dispatch, reducers ] );
 
     return (
         <>

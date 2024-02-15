@@ -1,0 +1,22 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border: 2px solid var(--inverted-bg-color);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input {
+}

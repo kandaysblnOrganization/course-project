@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { IStateSchema } from 'shared/config/storeConfig/StateSchema';
 import { getCounter } from 'entities/Counter/model/selectors/getCounter/getCounter';
 

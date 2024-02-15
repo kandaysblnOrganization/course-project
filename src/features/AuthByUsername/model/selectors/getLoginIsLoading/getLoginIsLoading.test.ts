@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { IStateSchema } from 'shared/config/storeConfig/StateSchema';
 import { getLoginIsLoading } from './getLoginIsLoading';
 
@@ -10,7 +9,7 @@ describe( 'getLoginIsLoading.test', () => {
             },
         };
 
-        expect( getLoginIsLoading( state as IStateSchema ) ).toEqual( state.loginForm.isLoading );
+        expect( getLoginIsLoading( state as IStateSchema ) ).toEqual( state?.loginForm?.isLoading );
     } );
 
     test( 'should work fine without state', () => {

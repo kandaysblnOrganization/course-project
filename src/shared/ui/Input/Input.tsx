@@ -29,7 +29,7 @@ export const Input = React.memo((props: IInputProps) => {
 
     React.useEffect(() => {
         if (autofocus) {
-            if (inputRef) {
+            if (inputRef.current) {
                 inputRef.current.focus();
             }
         }

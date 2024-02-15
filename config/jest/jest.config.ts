@@ -16,6 +16,7 @@ export default {
     // Automatically clear mock calls, instances and results before every test
     globals: {
         '__IS_DEV__': true,
+        '__API__': ''
     },
     clearMocks: true,
     testEnvironment: 'jsdom',
@@ -42,7 +43,7 @@ export default {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx',
-        'axios': 'axios/dist/node/axios.cjs'
+        'axios': 'axios/dist/axios.js'
     },
 
     // Indicates whether the coverage information should be collected while executing the test

@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { IStateSchema } from 'shared/config/storeConfig/StateSchema';
 import { getLoginPassword } from './getLoginPassword';
 
@@ -10,7 +9,7 @@ describe( 'getLoginPassword all tests', () => {
             },
         };
 
-        expect( getLoginPassword( state as IStateSchema ) ).toEqual( state.loginForm.password );
+        expect( getLoginPassword( state as IStateSchema ) ).toEqual( state?.loginForm?.password );
     } );
 
     test( 'should work fine without state', () => {

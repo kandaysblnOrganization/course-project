@@ -1,5 +1,5 @@
-import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import React, { MutableRefObject } from 'react';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import classes from './Modal.module.scss';
 import { Portal } from 'shared/ui/Portal/Portal';
 
@@ -24,7 +24,7 @@ export const Modal: React.FC<IModalProps> = (props) => {
 
     const [ isClosing, setIsClosing ] = React.useState(false);
     const [ isMounted, setIsMounted ] = React.useState(false);
-    const timeoutRef = React.useRef<ReturnType<typeof setTimeout>>();
+    const timeoutRef = React.useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
     const closeHandler = React.useCallback(() => {
         if (onClose) {
@@ -46,7 +46,7 @@ export const Modal: React.FC<IModalProps> = (props) => {
         e.stopPropagation();
     };
 
-    const mods: Record<string, string | boolean> = {
+    const mods: Mods = {
         [classes.opened]: isOpen,
         [classes.closing]: isClosing,
     };

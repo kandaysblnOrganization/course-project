@@ -3,8 +3,11 @@ import { IStateSchema } from './StateSchema';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
+import { $api } from 'shared/api/api';
+import { NavigateFunction } from 'react-router-dom';
+import { CombinedState, Reducer } from 'redux';
 
-export const createReduxStore = (initialState?: IStateSchema, asyncReducers?: ReducersMapObject<IStateSchema>) => {
+export const createReduxStore = (initialState?: IStateSchema, asyncReducers?: ReducersMapObject<IStateSchema>, navigate?: NavigateFunction) => {
     const rootReducers: ReducersMapObject<IStateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
@@ -13,10 +16,18 @@ export const createReduxStore = (initialState?: IStateSchema, asyncReducers?: Re
 
     const reducerManager = createReducerManager(rootReducers);
 
-    const store = configureStore<IStateSchema>({
-        reducer: reducerManager.reduce,
+    const store = configureStore({
+        reducer: reducerManager.reduce as Reducer<CombinedState<IStateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
+        middleware: getDefaultMiddleware => getDefaultMiddleware({
+            thunk: {
+                extraArgument: {
+                    api: $api,
+                    navigate,
+                },
+            }
+        })
     });
 
     // @ts-expect-error: TODO поправить типы стора

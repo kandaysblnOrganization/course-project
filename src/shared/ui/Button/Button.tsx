@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import classes from './Button.module.scss';
 
 export enum ButtonTheme {
@@ -28,13 +28,13 @@ const ButtonComponent: React.FC<IButtonProps> = (props) => {
     const {
         className,
         children,
-        theme,
+        theme = ButtonTheme.OUTLINED,
         size = ButtonSize.M,
         square,
         ...otherProps
     } = props;
 
-    const mods: Record<string, boolean | string> = {
+    const mods: Mods = {
         [classes.square]: square,
     };
 

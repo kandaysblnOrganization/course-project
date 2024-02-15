@@ -1,5 +1,4 @@
 import { IStateSchema } from 'shared/config/storeConfig/StateSchema';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { getLoginError } from './getLoginError';
 
 describe( 'getLoginError', () => {
@@ -10,7 +9,7 @@ describe( 'getLoginError', () => {
             },
         };
 
-        expect( getLoginError( state as IStateSchema ) ).toEqual( state.loginForm.error );
+        expect( getLoginError( state as IStateSchema ) ).toEqual( state?.loginForm?.error );
     } );
 
     test( 'should work fine without state', () => {

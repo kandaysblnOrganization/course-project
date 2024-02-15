@@ -17,7 +17,11 @@
   "open-modal": "open-modal",
   "page_error_message": "page_error_message",
   "page_reload_text": "page_reload_text",
+  "profile_edit_button_text": "profile_edit_button_text",
+  "profile_firstname_input_placeholder": "profile_firstname_input_placeholder",
+  "profile_lastname_input_placeholder": "profile_lastname_input_placeholder",
   "profile_navbar": "profile_navbar",
+  "profile_title": "profile_title",
   "throw_error": "throw_error",
   "username": "username",
   "userpass": "userpass"

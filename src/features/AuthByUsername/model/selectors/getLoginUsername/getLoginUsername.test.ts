@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { IStateSchema } from 'shared/config/storeConfig/StateSchema';
 import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
 
@@ -10,7 +9,7 @@ describe( 'getLoginUserName all tests', () => {
             },
         };
 
-        expect( getLoginUsername( state as IStateSchema ) ).toEqual( state.loginForm.username );
+        expect( getLoginUsername( state as IStateSchema ) ).toEqual( state?.loginForm?.username );
     } );
 
     test( 'should work fine without state', () => {
