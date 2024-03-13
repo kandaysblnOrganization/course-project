@@ -1,11 +1,14 @@
 import React, { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import classes from './ProfileCard.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { IProfile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Select } from 'shared/ui/Select/Select';
+import { Currency } from 'shared/const/common';
 
 interface IProfileCardProps {
     className?: string;
@@ -17,6 +20,8 @@ interface IProfileCardProps {
     onChangeLastName?: (value: string) => void
     onChangeAge?: (value: string) => void
     onChangeCity?: (value: string) => void
+    onChangeUsername?: (value: string) => void
+    onChangeAvatar?: (value: string) => void
 }
 
 const ProfileCardComponent: React.FC<IProfileCardProps> = (props) => {
@@ -29,10 +34,16 @@ const ProfileCardComponent: React.FC<IProfileCardProps> = (props) => {
         onChangeLastName,
         onChangeFirstName,
         onChangeAge,
-        onChangeCity
+        onChangeCity,
+        onChangeAvatar,
+        onChangeUsername,
     } = props;
 
     const { t } = useTranslation( 'profile' );
+
+    const mods: Mods = {
+        [classes.editing]: !readonly,
+    };
 
     if (isLoading) {
         return (
@@ -56,8 +67,13 @@ const ProfileCardComponent: React.FC<IProfileCardProps> = (props) => {
     }
 
     return (
-        <div className={ classNames( classes.card, {}, [ className ] ) }>
+        <div className={ classNames( classes.card, mods, [ className ] ) }>
             <div className={ classes.body }>
+                { data?.avatar && (
+                    <div className={ classes.avatarWrapper }>
+                        <Avatar src={ data.avatar } alt={ t( 'profile_avatar_img_alt' ) }/>
+                    </div>
+                ) }
                 <Input
                     readonly={ readonly }
                     value={ data?.firstname }
@@ -85,6 +101,38 @@ const ProfileCardComponent: React.FC<IProfileCardProps> = (props) => {
                     placeholder={ t( 'profile_city_input_placeholder' ) }
                     className={ classes.input }
                     onChange={ onChangeCity }
+                />
+                <Input
+                    readonly={ readonly }
+                    value={ data?.username }
+                    placeholder={ t( 'profile_username_input_placeholder' ) }
+                    className={ classes.input }
+                    onChange={ onChangeUsername }
+                />
+                <Input
+                    readonly={ readonly }
+                    value={ data?.avatar }
+                    placeholder={ t( 'profile_avatar_input_placeholder' ) }
+                    className={ classes.input }
+                    onChange={ onChangeAvatar }
+                />
+
+                <Select
+                    label={t('profile_currency_select_label')}
+                    options={[
+                        {
+                            value: Currency.RUB,
+                            text: Currency.RUB,
+                        },
+                        {
+                            value: Currency.USD,
+                            text: Currency.USD,
+                        },
+                        {
+                            value: Currency.EUR,
+                            text: Currency.EUR,
+                        },
+                    ]}
                 />
             </div>
         </div>

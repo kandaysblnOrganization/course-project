@@ -5,5 +5,9 @@
   "profile_card_error_title": "Произошла ошибка при загрузке профиля",
   "profile_card_error_text": "Попробуйте обновить страницу",
   "profile_age_input_placeholder": "Ваш возраст",
-  "profile_city_input_placeholder": "Ваш город"
+  "profile_city_input_placeholder": "Ваш город",
+  "profile_avatar_input_placeholder": "Ваш аватар",
+  "profile_username_input_placeholder": "Ваше имя пользователя",
+  "profile_avatar_img_alt": "Ваша аватарка",
+  "profile_currency_select_label": "Ваша валюта"
 }

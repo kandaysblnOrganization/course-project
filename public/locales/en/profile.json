@@ -5,5 +5,9 @@
   "profile_card_error_title": "There was an error loading your profile",
   "profile_card_error_text": "Try refreshing your profile page",
   "profile_age_input_placeholder": "Your age",
-  "profile_city_input_placeholder": "Your city"
+  "profile_city_input_placeholder": "Your city",
+  "profile_avatar_input_placeholder": "Your avatar",
+  "profile_username_input_placeholder": "Your username",
+  "profile_avatar_img_alt": "Your avatar",
+  "profile_currency_select_label": "Your currency"
 }
