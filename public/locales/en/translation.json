@@ -19,5 +19,8 @@
   "authorization_error_title": "Authorization error",
   "authorization_error_text": "Wrong login or password",
   "logout": "Logout",
-  "profile_navbar": "Profile"
+  "profile_navbar": "Profile",
+  "cancel_button_text": "Cancel",
+  "save_button_text": "Save",
+  "edit_button_text": "Edit"
 }

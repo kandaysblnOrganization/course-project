@@ -19,5 +19,8 @@
   "authorization_error_title": "Ошибка при авторизации",
   "authorization_error_text": "Неверный логин или пароль",
   "logout": "Выйти",
-  "profile_navbar": "Профиль"
+  "profile_navbar": "Профиль",
+  "cancel_button_text": "Отменить",
+  "save_button_text": "Сохранить",
+  "edit_button_text": "Редактировать"
 }

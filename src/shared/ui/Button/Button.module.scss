@@ -36,7 +36,8 @@
 }
 
 .outlined,
-.outlined-inverted {
+.outlined-inverted,
+.outlined-error {
     background-color: transparent;
 }
 
@@ -48,6 +49,11 @@
 .outlined-inverted {
     border: 1px solid var(--inverted-primary-color);
     color: var(--inverted-primary-color);
+}
+
+.outlined-error {
+    border: 1px solid red;
+    color: red;
 }
 
 .background,

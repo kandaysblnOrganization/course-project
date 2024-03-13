@@ -1,6 +1,13 @@
 {
+  "cancel_button_text": "cancel_button_text",
+  "edit_button_text": "",
+  "profile_age_input_placeholder": "profile_age_input_placeholder",
+  "profile_card_error_text": "profile_card_error_text",
+  "profile_card_error_title": "profile_card_error_title",
+  "profile_city_input_placeholder": "profile_city_input_placeholder",
   "profile_edit_button_text": "",
   "profile_firstname_input_placeholder": "profile_firstname_input_placeholder",
   "profile_lastname_input_placeholder": "profile_lastname_input_placeholder",
-  "profile_title": ""
+  "profile_title": "",
+  "save_button_text": "save_button_text"
 }

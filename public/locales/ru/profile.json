@@ -1,6 +1,9 @@
 {
   "profile_title": "Профиль",
-  "profile_edit_button_text": "Редактировать",
   "profile_firstname_input_placeholder": "Ваше имя",
-  "profile_lastname_input_placeholder": "Ваша фамилия"
+  "profile_lastname_input_placeholder": "Ваша фамилия",
+  "profile_card_error_title": "Произошла ошибка при загрузке профиля",
+  "profile_card_error_text": "Попробуйте обновить страницу",
+  "profile_age_input_placeholder": "Ваш возраст",
+  "profile_city_input_placeholder": "Ваш город"
 }

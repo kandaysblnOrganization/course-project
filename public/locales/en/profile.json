@@ -1,6 +1,9 @@
 {
   "profile_title": "Profile",
-  "profile_edit_button_text": "Edit",
   "profile_firstname_input_placeholder": "Your name",
-  "profile_lastname_input_placeholder": "Your lastname"
+  "profile_lastname_input_placeholder": "Your lastname",
+  "profile_card_error_title": "There was an error loading your profile",
+  "profile_card_error_text": "Try refreshing your profile page",
+  "profile_age_input_placeholder": "Your age",
+  "profile_city_input_placeholder": "Your city"
 }

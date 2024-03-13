@@ -6,12 +6,6 @@
     border: 2px solid var(--inverted-bg-color);
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 .body {
     display: flex;
     flex-direction: column;
@@ -19,4 +13,12 @@
 }
 
 .input {
+}
+
+.loading,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
 }
