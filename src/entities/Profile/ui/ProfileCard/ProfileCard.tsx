@@ -7,8 +7,8 @@ import { Input } from 'shared/ui/Input/Input';
 import { IProfile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Select } from 'shared/ui/Select/Select';
-import { Currency } from 'shared/const/common';
+import { TCurrency } from 'entities/Currency';
+import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect';
 
 interface IProfileCardProps {
     className?: string;
@@ -22,6 +22,7 @@ interface IProfileCardProps {
     onChangeCity?: (value: string) => void
     onChangeUsername?: (value: string) => void
     onChangeAvatar?: (value: string) => void
+    onChangeCurrency?: (value: TCurrency) => void
 }
 
 const ProfileCardComponent: React.FC<IProfileCardProps> = (props) => {
@@ -37,6 +38,7 @@ const ProfileCardComponent: React.FC<IProfileCardProps> = (props) => {
         onChangeCity,
         onChangeAvatar,
         onChangeUsername,
+        onChangeCurrency,
     } = props;
 
     const { t } = useTranslation( 'profile' );
@@ -117,22 +119,11 @@ const ProfileCardComponent: React.FC<IProfileCardProps> = (props) => {
                     onChange={ onChangeAvatar }
                 />
 
-                <Select
-                    label={t('profile_currency_select_label')}
-                    options={[
-                        {
-                            value: Currency.RUB,
-                            text: Currency.RUB,
-                        },
-                        {
-                            value: Currency.USD,
-                            text: Currency.USD,
-                        },
-                        {
-                            value: Currency.EUR,
-                            text: Currency.EUR,
-                        },
-                    ]}
+                <CurrencySelect
+                    className={ classes.input }
+                    value={ data?.currency }
+                    readonly={ readonly }
+                    onChange={ onChangeCurrency }
                 />
             </div>
         </div>

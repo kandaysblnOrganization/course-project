@@ -12,7 +12,8 @@ interface ISelectProps {
     label?: string;
     options?: ISelectOption[];
     value?: string;
-    onChange?: (value: string) => void
+    readonly?: boolean;
+    onChange?: (value: string) => void;
 }
 
 const SelectComponent: React.FC<ISelectProps> = (props) => {
@@ -21,6 +22,7 @@ const SelectComponent: React.FC<ISelectProps> = (props) => {
         label,
         options,
         value,
+        readonly,
         onChange,
     } = props;
 
@@ -50,6 +52,7 @@ const SelectComponent: React.FC<ISelectProps> = (props) => {
                 </span>
             ) }
             <select
+                disabled={ readonly }
                 value={ value }
                 className={ classes.select }
                 onChange={ onChangeHandler }

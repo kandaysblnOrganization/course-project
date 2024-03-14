@@ -17,6 +17,7 @@ import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
 import { isNumeric } from 'shared/lib/isNumeric/isNumeric';
+import { TCurrency } from 'entities/Currency';
 
 interface IProfilePageProps {
     className?: string;
@@ -68,6 +69,10 @@ const ProfilePage = React.memo( (props: IProfilePageProps) => {
         dispatch( profileActions.updateProfile( { avatar: value } ) );
     }, [ dispatch ] );
 
+    const onChangeCurrency = useCallback( (value: TCurrency) => {
+        dispatch( profileActions.updateProfile( { currency: value } ) );
+    }, [ dispatch ] );
+
     return (
         <DynamicModuleLoader reducers={ reducers } removeAfterUnmount>
             <div className={ classNames( classes.page, {}, [ className ] ) }>
@@ -83,6 +88,7 @@ const ProfilePage = React.memo( (props: IProfilePageProps) => {
                     onChangeCity={ onChangeCity }
                     onChangeUsername={ onChangeUsername }
                     onChangeAvatar={ onChangeAvatar }
+                    onChangeCurrency={ onChangeCurrency }
                 />
             </div>
         </DynamicModuleLoader>

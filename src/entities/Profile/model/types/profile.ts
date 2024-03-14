@@ -1,10 +1,11 @@
-import { Country, Currency } from 'shared/const/common';
+import { TCurrency } from 'entities/Currency';
+import { Country } from 'shared/const/common';
 
 export interface IProfile {
     firstname?: string;
     lastname?: string;
     age?: number;
-    currency?: Currency;
+    currency?: TCurrency;
     country?: Country;
     city?: string;
     username?: string;

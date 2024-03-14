@@ -22,5 +22,6 @@
   "profile_navbar": "Profile",
   "cancel_button_text": "Cancel",
   "save_button_text": "Save",
-  "edit_button_text": "Edit"
+  "edit_button_text": "Edit",
+  "currency_select_label": "Indicate currency"
 }
