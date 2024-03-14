@@ -3,6 +3,8 @@ import classes from './SidebarItem.module.scss';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { ISidebarItem } from '../../model/items';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 
 interface ISidebarItemProps {
     item: ISidebarItem;
@@ -14,12 +16,16 @@ const SidebarItemComponent: React.FC<ISidebarItemProps> = (props) => {
         item,
         collapsed
     } = props;
-
     const { t } = useTranslation();
+    const isAuth = useSelector( getUserAuthData );
 
     const IconComponent = useMemo(() => {
         return item.icon;
     }, [item]);
+
+    if (item.authOnly && !isAuth) {
+        return null;
+    }
 
     return (
         <AppLink

@@ -18,6 +18,7 @@ import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
 import { isNumeric } from 'shared/lib/isNumeric/isNumeric';
 import { TCurrency } from 'entities/Currency';
+import { TCountry } from 'entities/Country';
 
 interface IProfilePageProps {
     className?: string;
@@ -73,6 +74,10 @@ const ProfilePage = React.memo( (props: IProfilePageProps) => {
         dispatch( profileActions.updateProfile( { currency: value } ) );
     }, [ dispatch ] );
 
+    const onChangeCountry = useCallback( (value: TCountry) => {
+        dispatch( profileActions.updateProfile( { country: value } ) );
+    }, [ dispatch ] );
+
     return (
         <DynamicModuleLoader reducers={ reducers } removeAfterUnmount>
             <div className={ classNames( classes.page, {}, [ className ] ) }>
@@ -89,6 +94,7 @@ const ProfilePage = React.memo( (props: IProfilePageProps) => {
                     onChangeUsername={ onChangeUsername }
                     onChangeAvatar={ onChangeAvatar }
                     onChangeCurrency={ onChangeCurrency }
+                    onChangeCountry={ onChangeCountry }
                 />
             </div>
         </DynamicModuleLoader>

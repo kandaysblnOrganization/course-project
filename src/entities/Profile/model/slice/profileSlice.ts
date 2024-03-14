@@ -49,13 +49,13 @@ export const profileSlice = createSlice( {
             .addCase( updateProfileData.pending, (state) => {
                 state.isLoading = true;
                 state.error = undefined;
-                state.readonly = true;
             } )
             .addCase( updateProfileData.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.data = action.payload;
                 state.form = action.payload;
                 state.error = undefined;
+                state.readonly = true;
             } )
             .addCase( updateProfileData.rejected, (state, action) => {
                 state.isLoading = false;

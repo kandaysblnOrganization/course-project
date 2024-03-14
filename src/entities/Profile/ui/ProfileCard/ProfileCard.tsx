@@ -7,8 +7,8 @@ import { Input } from 'shared/ui/Input/Input';
 import { IProfile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { TCurrency } from 'entities/Currency';
-import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect';
+import { TCurrency, CurrencySelect } from 'entities/Currency';
+import { CountrySelect, TCountry } from 'entities/Country';
 
 interface IProfileCardProps {
     className?: string;
@@ -23,6 +23,7 @@ interface IProfileCardProps {
     onChangeUsername?: (value: string) => void
     onChangeAvatar?: (value: string) => void
     onChangeCurrency?: (value: TCurrency) => void
+    onChangeCountry?: (value: TCountry) => void
 }
 
 const ProfileCardComponent: React.FC<IProfileCardProps> = (props) => {
@@ -39,6 +40,7 @@ const ProfileCardComponent: React.FC<IProfileCardProps> = (props) => {
         onChangeAvatar,
         onChangeUsername,
         onChangeCurrency,
+        onChangeCountry,
     } = props;
 
     const { t } = useTranslation( 'profile' );
@@ -124,6 +126,13 @@ const ProfileCardComponent: React.FC<IProfileCardProps> = (props) => {
                     value={ data?.currency }
                     readonly={ readonly }
                     onChange={ onChangeCurrency }
+                />
+
+                <CountrySelect
+                    className={ classes.input }
+                    value={ data?.country }
+                    readonly={ readonly }
+                    onChange={ onChangeCountry }
                 />
             </div>
         </div>

@@ -23,5 +23,6 @@
   "cancel_button_text": "Отменить",
   "save_button_text": "Сохранить",
   "edit_button_text": "Редактировать",
-  "currency_select_label": "Укажите валюту"
+  "currency_select_label": "Укажите валюту",
+  "country_select_label": "Укажите страну"
 }

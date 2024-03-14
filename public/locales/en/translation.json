@@ -23,5 +23,6 @@
   "cancel_button_text": "Cancel",
   "save_button_text": "Save",
   "edit_button_text": "Edit",
-  "currency_select_label": "Indicate currency"
+  "currency_select_label": "Indicate currency",
+  "country_select_label": "Indicate country"
 }
