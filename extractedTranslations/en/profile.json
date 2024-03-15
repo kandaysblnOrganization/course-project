@@ -13,5 +13,9 @@
   "profile_lastname_input_placeholder": "profile_lastname_input_placeholder",
   "profile_title": "",
   "profile_username_input_placeholder": "",
+  "profile_validate_incorrect_age_text": "",
+  "profile_validate_incorrect_user_age": "profile_validate_incorrect_user_age",
+  "profile_validate_incorrect_user_data_text": "profile_validate_incorrect_user_data_text",
+  "profile_validate_incorrect_username_text": "profile_validate_incorrect_username_text",
   "save_button_text": "save_button_text"
 }

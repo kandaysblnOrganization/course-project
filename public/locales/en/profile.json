@@ -8,5 +8,14 @@
   "profile_city_input_placeholder": "Your city",
   "profile_avatar_input_placeholder": "Your avatar",
   "profile_username_input_placeholder": "Your username",
-  "profile_avatar_img_alt": "Your avatar"
+  "profile_avatar_img_alt": "Your avatar",
+  "profile_validate_incorrect_user_data_text": "Check that the entered data is correct",
+  "profile_validate_incorrect_age_text": "Check that the age entered is correct",
+  "profile_validate_incorrect_username_text": "Check that the username you entered is correct",
+  "profile_validate_incorrect_city_text": "Check that the city you entered is correct",
+  "profile_validate_incorrect_currency_text": "Check that the selected currency is correct",
+  "profile_validate_incorrect_avatar_text": "Check the correctness of the selected avatar",
+  "profile_validate_incorrect_country_text": "Check that the selected country is correct",
+  "profile_validate_server_error_text": "Server error",
+  "profile_validate_no_data_error_text": "No data"
 }

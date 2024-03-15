@@ -1,5 +1,8 @@
 import { TCurrency } from 'entities/Currency';
 import { TCountry } from 'entities/Country';
+import { validateProfileErrors } from '../../const/validateProfileErrors';
+
+export type TValidateProfileError = keyof typeof validateProfileErrors;
 
 export interface IProfile {
     firstname?: string;
@@ -18,4 +21,5 @@ export interface IProfileSchema {
     isLoading: boolean;
     error?: string;
     readonly: boolean;
+    validateErrors?: TValidateProfileError[];
 }

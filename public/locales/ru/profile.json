@@ -8,5 +8,14 @@
   "profile_city_input_placeholder": "Ваш город",
   "profile_avatar_input_placeholder": "Ваш аватар",
   "profile_username_input_placeholder": "Ваше имя пользователя",
-  "profile_avatar_img_alt": "Ваша аватарка"
+  "profile_avatar_img_alt": "Ваша аватарка",
+  "profile_validate_incorrect_user_data_text": "Проверьте правильность введенных данных",
+  "profile_validate_incorrect_age_text": "Проверьте правильность введенного возраста",
+  "profile_validate_incorrect_username_text": "Проверьте правильность введенного имени пользователя",
+  "profile_validate_incorrect_city_text": "Проверьте правильность введенного города",
+  "profile_validate_incorrect_currency_text": "Проверьте правильность выбранной валюты",
+  "profile_validate_incorrect_avatar_text": "Проверьте правильность выбранной аватарки",
+  "profile_validate_incorrect_country_text": "Проверьте правильность выбранной страны",
+  "profile_validate_server_error_text": "Ошибка сервера",
+  "profile_validate_no_data_error_text": "Нет данных"
 }
